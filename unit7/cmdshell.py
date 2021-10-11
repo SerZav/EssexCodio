@@ -22,10 +22,15 @@ class cli(Cmd):
             try:
                 directory = os.listdir(inp)
             except:
-                print(f"Error: parameter '{inp}' is not a valid directory or file ")
+                print(f"Error: parameter '{inp}' is not a valid path")
                 return
-        for file in directory:
-            print(file)
+        # if directory is empty, shows message. Else, loop through 
+        # variable directory to show files
+        if not directory:
+            print("No files in currect directory")
+        else:
+            for file in directory:
+                print(file)
 
 
     def do_exit(self, inp):
@@ -39,6 +44,8 @@ class cli(Cmd):
         return True        
 
     def do_clear(self, inp):
+        '''SYNOPSIS:\
+           \n   clears screen '''        
         os.system('clear')
 
     def do_add(self, inp):
