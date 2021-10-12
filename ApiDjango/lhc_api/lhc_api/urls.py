@@ -18,12 +18,17 @@ from django.contrib import admin
 from django.urls import path
 # import functions for views
 from website.views import welcome,date
+from documents import views
 
+router = routers.DefaultRouter()
+router.register(r'users', views.UserViewSet)
 
 urlpatterns = [
     path('admin', admin.site.urls),
     path('welcome', welcome),
     path('date', date),
-    
+    path('', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+
 
 ]
