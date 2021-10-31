@@ -1,3 +1,4 @@
+""" Testing of postal codes using regular Expressions """
 import re
 
 # regex code with inner description of parameters
