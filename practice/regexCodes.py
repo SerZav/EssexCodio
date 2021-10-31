@@ -2,8 +2,7 @@ import re
 
 # regex code with inner description of parameters
 pattern = r"(?P<outcode>[A-Za-z][A-Za-z0-9]{1,2}[A-Za-z0-9]?)[ ](?P<incode>"
-patter += "([0-9][A-Za-z^CIKMOV][A-Za-z^CIKMOV]))$"
-print(re.match(pattern,sequence) != None)
+pattern += "([0-9][A-Za-z^CIKMOV][A-Za-z^CIKMOV]))$"
 
 # some valid codes
 testsOk = "M1 1AA", "M60 1NW", "CR2 6XH", "DN55 1PT", "W1A 1HQ", "EC1A 1BB"
