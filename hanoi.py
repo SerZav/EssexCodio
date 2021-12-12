@@ -1,9 +1,14 @@
+""" Hanoi towers demonstration using recursion and memoization """
+
 class Hanoi:
+    """ main class for Hanoi towers """
+    # variable initialization
     pegA = []
     pegB = []
     pegC = []
     memo = {}
     steps = 0
+
     def __init__(self, disks):
         """ Constructor for the class """
         for disk in range(disks, 0, -1):
@@ -40,14 +45,15 @@ class Hanoi:
             return n
         if n in dictionary:
             return dictionary[n]
-        newdictionary = 1 + self.calculateOnly(n - 1, dictionary) + self.calculateOnly(n - 1, dictionary)
+        newdictionary = 1 + self.calculateOnly(n - 1, dictionary) + 
+        self.calculateOnly(n - 1, dictionary)
         dictionary[n] = newdictionary
         return dictionary[n]
 
 
 if __name__ == "__main__":
     """ 
-    Main program. Depending of the number of disks it will show the steps or not.
+    Main program. Depending of the number of disks it will show the steps.
     If number of disks is greater than 6, it will use a memoization approach to
     optimize the number of steps.
     """
