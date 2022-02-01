@@ -45,8 +45,7 @@ class Hanoi:
             return n
         if n in dictionary:
             return dictionary[n]
-        newdictionary = 1 + self.calculateOnly(n - 1, dictionary) + 
-        self.calculateOnly(n - 1, dictionary)
+        newdictionary = 1 + self.calculateOnly(n - 1, dictionary) + self.calculateOnly(n - 1, dictionary)
         dictionary[n] = newdictionary
         return dictionary[n]
 
