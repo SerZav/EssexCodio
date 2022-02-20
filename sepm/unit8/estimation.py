@@ -1,6 +1,6 @@
-""" Estimation test """
+""" Estimation usign COCOMO """
 class Cocomo:
-    """ Estimation for Cocomo method """
+    """ Cocomo class """
     effort = 0.0
     time = 0.0
     staff = 0.0
